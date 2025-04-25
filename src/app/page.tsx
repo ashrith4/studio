@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, MountainSnow, Trees } from 'lucide-react';
+import { MapPin, MountainSnow, Trees, Car } from 'lucide-react'; // Added Car icon
 import { places } from '@/data/sikkimData';
 
 export default function Home() {
@@ -24,13 +24,29 @@ export default function Home() {
           <p className="text-lg md:text-xl max-w-3xl drop-shadow-sm">
             Nestled in the Himalayas, Sikkim is a land of breathtaking landscapes, vibrant culture, and serene monasteries. Explore snow-capped peaks, lush valleys, and unique biodiversity.
           </p>
-          <div className="mt-6 flex gap-4 items-center text-sm md:text-base">
+          <div className="mt-6 flex flex-wrap gap-3 items-center text-sm md:text-base"> {/* Added flex-wrap */}
              <span className="flex items-center gap-1 bg-black/50 px-3 py-1 rounded-full"><MountainSnow className="h-4 w-4" /> Himalayas</span>
              <span className="flex items-center gap-1 bg-black/50 px-3 py-1 rounded-full"><Trees className="h-4 w-4" /> Rich Flora & Fauna</span>
              <span className="flex items-center gap-1 bg-black/50 px-3 py-1 rounded-full">🧘 Serene Monasteries</span>
           </div>
         </div>
       </section>
+
+       {/* Car Rental Promo Section */}
+      <section className="bg-accent/10 p-6 rounded-lg shadow-sm border border-accent/30 text-center">
+          <h3 className="text-2xl font-semibold mb-3 text-secondary flex items-center justify-center gap-2">
+              <Car className="h-6 w-6 text-primary"/> Need Transportation?
+          </h3>
+          <p className="text-muted-foreground mb-4">
+            Explore Sikkim comfortably with our reliable car rental service. We provide cars with experienced drivers and pickup/drop facilities.
+          </p>
+          <Link href="/cars" passHref>
+            <Button variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              View Available Cars
+            </Button>
+          </Link>
+      </section>
+
 
       {/* Places Section */}
       <section>
@@ -65,7 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Travel Tips Section (Optional) */}
+      {/* Travel Tips Section */}
       <section className="bg-muted p-6 rounded-lg shadow-sm">
           <h3 className="text-2xl font-semibold mb-4 text-secondary">Travel Tips for Sikkim</h3>
           <ul className="list-disc list-inside space-y-2 text-muted-foreground">
@@ -74,6 +90,7 @@ export default function Home() {
               <li>Acclimatization: Crucial for high-altitude areas like North Sikkim. Ascend gradually.</li>
               <li>Connectivity: Network coverage can be patchy in remote areas.</li>
               <li>Respect Local Culture: Dress modestly when visiting monasteries and respect local customs.</li>
+              <li>Transportation: Book vehicles in advance, especially during peak season. Shared taxis are common, but private rentals offer more flexibility.</li> {/* Added transport tip */}
           </ul>
       </section>
 
