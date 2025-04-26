@@ -154,4 +154,3 @@ npm run start
 ## Contributing
 
 Contributions are welcome! Please follow standard Git workflow (fork, branch, pull request).
-```
